@@ -38,9 +38,20 @@ int main() {
     float w = rand_float()*10.0f; 
 
     float epsilon = 1e-3;
-    printf("Cost error             w: %f\n", cost(w));
-    printf("Cost error with eps weps: %f\n", cost(w - epsilon));
-    printf("Cost error with eps weps: %f\n", cost(w - epsilon*2));
+    float rate = 1e-3; //learning rate
+    
+    //derivative of cost function
+    printf("Cost error before w: %f\n", cost(w));
+
+    for(size_t i=0 ; i<500; ++i){
+
+        float dcost = (cost(w + epsilon) - cost(w))/epsilon;
+        w -= rate*dcost;
+        printf("Cost error after  w: %f\n", cost(w));
+    }
+
+    printf("----------------------------------------\n");
+    printf("w: %f\n", w);
 
     return 0;
 }
