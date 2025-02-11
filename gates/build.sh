@@ -2,4 +2,5 @@
 
 set -xe
 
-clang -Wall -Wextra -o gates gates.c -lm
+clang -Wall -Wextra -o or or.c -lm
+clang -Wall -Wextra -o xor xor.c -lm

@@ -1,4 +1,5 @@
 .vscode
 .git
 twice/twice
-gates/gates
+gates/or
+gates/xor
